@@ -1,0 +1,54 @@
+<div
+  class="nav-item"
+  [ngStyle]="{
+    'padding-left.px': panelMenu.arrowPosition === 'left' ? 34 + (tierNumber - 1) * 20 : 8 + (tierNumber - 1) * 20,
+    'padding-right.px': panelMenu.arrowPosition === 'left' ? 8 : 24
+  }"
+  [ngClass]="{
+    arrowLeft: panelMenu.arrowPosition === 'left',
+    arrowRight: panelMenu.arrowPosition === 'right',
+    iconLeft: panelMenu.iconPosition === 'left',
+    iconRight: panelMenu.iconPosition === 'right',
+    expanded: item.expanded,
+    active: isActive
+  }"
+  (click)="toggleItem(item)"
+  [routerLink]="item.routerLink"
+  routerLinkActive="active"
+  [attr.data-hover-label]="item.label"
+>
+
+  <!-- Show the arrow only if the item has children -->
+  <div
+  class="nav-arrow"
+  [style.left.px]="panelMenu.arrowPosition === 'left' ? 8 + (tierNumber - 1) * 20 : null"
+  [style.right.px]="panelMenu.arrowPosition === 'right' ? 8 : null"
+  *ngIf="item.children && item.children.length > 0"
+  >
+    <i
+      [ngClass]="{
+        'uc2icons-arrowRight': !item.expanded,
+        'uc2icons-arrowDown': item.expanded
+      }"
+    ></i>
+  </div>
+
+
+  <div class="nav-icon">
+    <i [class]="item.icon"></i>
+  </div>
+  <div class="nav-label">{{ item.label }}</div>
+</div>
+
+<!-- Recursive Rendering for Children -->
+<div
+  class="nav-children"
+  *ngIf="item.expanded && item.children && item.children.length > 0"
+>
+  <uc2ui-nav-menu-item
+    *ngFor="let child of item.children"
+    [item]="child"
+    [panelMenu]="panelMenu"
+    [tierNumber]="tierNumber + 1"
+  ></uc2ui-nav-menu-item>
+</div>

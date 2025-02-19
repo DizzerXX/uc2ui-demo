@@ -1,0 +1,14 @@
+<div class="uc2ui-slider">
+    <div class="value-display" [style.left.%]="getThumbPosition()">{{ value }}</div>
+    <input
+      type="range"
+      class="slider"
+      [min]="min"
+      [max]="max"
+      [value]="value"
+      (input)="onSliderInput($event)"
+      (change)="onSliderChange($event)"
+      style="--slider-value: {{ value }}"
+    />
+  </div>
+  

@@ -1,0 +1,36 @@
+<div class="search-bar-container">
+  <!-- Search Input -->
+  <input
+    type="text"
+    [(ngModel)]="searchQuery"
+    placeholder="Search..."
+    class="search-input"
+    (input)="onSearch()"
+    [ngClass]="{active: searchResult && searchResult.content.length > 0}"
+  />
+
+  <i class="uc2icons-search search-icon"></i>
+
+
+  <!-- Search Results -->
+  <div class="search-results" *ngIf="searchResult && searchResult.content.length > 0" (scroll)="onScroll($event)">
+    <div class="results-container">
+      <div class="container-list">
+        <div
+          class="search-item"
+          *ngFor="let item of searchResult.content"
+          (click)="onItemClicked(item)"
+        >
+          {{ getLabel(item) }}
+        </div>
+      </div>
+      <!-- Spinner -->
+      <uc2ui-spinner *ngIf="isLoading" [isLoading]="true" [size]="'small'" [color]="'#007bff'"></uc2ui-spinner>
+    </div>
+  </div>
+
+  <!-- No Results -->
+  <div class="no-results" *ngIf="searchResult?.content?.length === 0 && searchQuery && !isLoading">
+    No results found.
+  </div>
+</div>

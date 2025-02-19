@@ -1,0 +1,101 @@
+
+.uc2ui-date{
+  position: relative;
+  padding: 0 4px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100%;
+  border-radius: 4px;
+  background-color: #FFFFFF;
+  border: 1px solid #353535;
+  // width:80px;
+  height: 18px;
+  min-height: 18px;
+  max-height: 18px;
+  color: #353535;
+  cursor: pointer;
+
+  // &.active{
+  //   border-radius: 4px 4px 0 0;
+  // }
+
+  // .date-value{
+  //   font-weight: 400;
+  //   width: calc(100% - 18px);
+  //   min-height: 11px;
+  // }
+
+  // .date-icon{
+  //   position: absolute;
+  //   right: 0;
+  //   top: 0;
+  //   width: 18px;
+  //   height: 18px;
+  //   border-radius: 0 2px 2px 0;
+  //   background: #212121;
+  //   display: flex;
+  //   align-items: center;
+  //   justify-content: center;
+  //   pointer-events: none;
+
+  //   &.active{
+  //     border-radius: 0 2px 0 0;
+  //   }
+  // }
+
+  // .date-list{
+  //   position: absolute;
+  //   top: 18px;
+  //   left: 0;
+  //   display: grid;
+  //   grid-template-columns: 1fr 1fr 1fr;
+  //   border-radius: 0 0 4px 4px;
+  //   background: #FFFFFF;
+  //   z-index: 999;
+  //   width: calc(100% - 8px);
+  //   gap: 4px;
+  //   padding: 4px;
+
+  //   .date-item{
+  //     min-height: 14px;
+  //     display: flex;
+  //     align-items: center;
+  //     font-family: OpenSans;
+  //     font-size: 11px;
+  //     line-height: 10.89px;
+  //     padding: 0 4px;
+  //     width: calc(100% - 8px);
+  //     height: 20px;
+  //     transition: transform 0.1s ease-in;
+
+  //     &:hover{
+  //       color: #E9E9E9;
+  //       background-color: #353535;
+  //       transform: scale(1.1);
+  //       transition: transform 0.1s ease-in
+  //     }
+
+  //     &.selected{
+  //       background: #353535;
+  //       color: #E9E9E9;
+  //       transform: scale(1.1);
+  //     }
+  //   }
+  // }
+  // {
+  //   position: relative;
+  //   display: inline-block;
+  // }
+
+  input[type="text"] {
+    width: 200px;
+    padding: 8px;
+    cursor: pointer;
+  }
+
+  input[type="datetime-local"] {
+    display: none;
+  }
+
+}

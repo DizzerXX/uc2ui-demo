@@ -1,0 +1,30 @@
+:host ::ng-deep{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+  overflow: hidden;
+  color: #FBBF24;
+
+  .accordion-item-header{
+    padding: 8px 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    background-color: #212121;
+    font-size: 0.9375rem !important;
+    line-height: 1.8rem;
+    font-weight: 700;
+  }
+
+  .accordion-item-body{
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    background-color: #353535;
+
+  }
+}

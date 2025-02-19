@@ -1,0 +1,191 @@
+@font-face {
+  font-family: 'uc2ui';
+  src:  url('uc2ui.eot?3pwx7j');
+  src:  url('uc2ui.eot?3pwx7j#iefix') format('embedded-opentype'),
+    url('uc2ui.ttf?3pwx7j') format('truetype'),
+    url('uc2ui.woff?3pwx7j') format('woff'),
+    url('uc2ui.svg?3pwx7j#uc2ui') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="uc2icons-"], [class*=" uc2icons-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'uc2ui' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.uc2icons-shapes:before {
+  content: "\e900";
+  color: #fbbf24;
+}
+.uc2icons-sortAsc:before {
+  content: "\e901";
+  color: #fbbf24;
+}
+.uc2icons-sortDesc:before {
+  content: "\e902";
+  color: #fbbf24;
+}
+.uc2icons-sort:before {
+  content: "\e903";
+  color: #fbbf24;
+}
+.uc2icons-support:before {
+  content: "\e904";
+  color: #fbbf24;
+}
+.uc2icons-symbology:before {
+  content: "\e905";
+  color: #fbbf24;
+}
+.uc2icons-text:before {
+  content: "\e906";
+  color: #fbbf24;
+}
+.uc2icons-check:before {
+  content: "\e907";
+  color: #fbbf24;
+}
+.uc2icons-arrowUp:before {
+  content: "\e908";
+  color: #fbbf24;
+}
+.uc2icons-vector:before {
+  content: "\e909";
+  color: #fbbf24;
+}
+.uc2icons-ellipsis:before {
+  content: "\e90a";
+  color: #fbbf24;
+}
+.uc2icons-bft:before {
+  content: "\e90b";
+  color: #fbbf24;
+}
+.uc2icons-arrowLeft:before {
+  content: "\e90c";
+  color: #fbbf24;
+}
+.uc2icons-create:before {
+  content: "\e90d";
+  color: #fbbf24;
+}
+.uc2icons-multiply:before {
+  content: "\e90e";
+  color: #fbbf24;
+}
+.uc2icons-trash:before {
+  content: "\e90f";
+  color: #fbbf24;
+}
+.uc2icons-arrowDown:before {
+  content: "\e910";
+  color: #fbbf24;
+}
+.uc2icons-edit:before {
+  content: "\e911";
+  color: #fbbf24;
+}
+.uc2icons-arrowRightDouble:before {
+  content: "\e912";
+  color: #fbbf24;
+}
+.uc2icons-close:before {
+  content: "\e913";
+  color: #fbbf24;
+}
+.uc2icons-expand:before {
+  content: "\e916";
+  color: #fbbf24;
+}
+.uc2icons-filter:before {
+  content: "\e917";
+  color: #fbbf24;
+}
+.uc2icons-funnel:before {
+  content: "\e918";
+  color: #fbbf24;
+}
+.uc2icons-geometry:before {
+  content: "\e919";
+  color: #fbbf24;
+}
+.uc2icons-home:before {
+  content: "\e91a";
+  color: #fbbf24;
+}
+.uc2icons-intel:before {
+  content: "\e91b";
+  color: #fbbf24;
+}
+.uc2icons-arrowLeftDouble:before {
+  content: "\e91c";
+  color: #fbbf24;
+}
+.uc2icons-layers:before {
+  content: "\e91d";
+  color: #fbbf24;
+}
+.uc2icons-locationPin:before {
+  content: "\e91e";
+  color: #fbbf24;
+}
+.uc2icons-measure:before {
+  content: "\e91f";
+  color: #fbbf24;
+}
+.uc2icons-folderMedia:before {
+  content: "\e920";
+  color: #fbbf24;
+}
+.uc2icons-minus:before {
+  content: "\e921";
+  color: #fbbf24;
+}
+.uc2icons-arrowRight:before {
+  content: "\e922";
+  color: #fbbf24;
+}
+.uc2icons-operational:before {
+  content: "\e923";
+  color: #fbbf24;
+}
+.uc2icons-plus:before {
+  content: "\e924";
+  color: #fbbf24;
+}
+.uc2icons-circle:before {
+  content: "\e925";
+  color: #fbbf24;
+}
+.uc2icons-polyline:before {
+  content: "\e926";
+  color: #fbbf24;
+}
+.uc2icons-image:before {
+  content: "\e927";
+  color: #fbbf24;
+}
+.uc2icons-save:before {
+  content: "\e928";
+  color: #fbbf24;
+}
+.uc2icons-search:before {
+  content: "\e929";
+  color: #fbbf24;
+}
+.uc2icons-sensor:before {
+  content: "\e92a";
+  color: #fbbf24;
+}

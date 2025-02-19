@@ -1,0 +1,27 @@
+<!-- Button container for displaying different toast messages -->
+<!-- <div class="button-container">
+  <div *ngFor="let button of toastButtons">
+    <button class="button {{ button.type }}" (click)="showToastMessage(button)">
+      {{ button.title }}
+    </button>
+  </div>
+</div> -->
+
+<!-- Toast message containers for each position (dynamically generated) -->
+<div *ngFor="let position of positions" class="toast-container" [ngClass]="position">
+  <div *ngFor="let toast of filterToastsByPosition(position)" class="toast toast-{{ toast.type }}" [ngClass]="{'toast-hide': toast.hide}">
+    <div class="toast-header">
+      <div class="toast-title">{{ toast.title }}</div>
+      <button class="close-button" (click)="triggerHideToast(toast.id)">x</button>
+    </div>
+
+    <p class="toast-message">{{ toast.message }}</p>
+  </div>
+</div>
+
+
+
+
+
+
+

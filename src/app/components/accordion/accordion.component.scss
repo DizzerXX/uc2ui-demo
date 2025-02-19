@@ -1,0 +1,8 @@
+:host ::ng-deep{
+  width: 100%;
+  .uc2ui-accordion{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+}

@@ -1,0 +1,13 @@
+<div class="uc2ui-radio" [ngStyle]="{'flex-direction': inline ? 'row' : 'column'}">
+  <ng-container *ngFor="let option of options">
+    <div class="radio-item">
+      <div
+        class="radio-box"
+        [ngClass]="{'checked': isChecked(option.value)}"
+        (click)="toggleRadio(option.value)">
+        <span class="radio-icon" *ngIf="isChecked(option.value)"></span>
+      </div>
+      <span class="radio-label">{{ option.label }}</span>
+    </div>
+  </ng-container>
+</div>

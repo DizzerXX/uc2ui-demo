@@ -1,0 +1,21 @@
+<div
+  class="accordion-item-header"
+  [ngClass]="{ active: accordionBody.isActive }"
+  (click)="onToggle()"
+>
+  <span class="accordion-header">{{ accordionBody.header }}</span>
+  <i
+    class="uc2icons-arrowRight"
+    *ngIf="!accordionBody.isActive"
+  ></i>
+  <i
+    class="uc2icons-arrowDown"
+    *ngIf="accordionBody.isActive"
+  ></i>
+</div>
+<div
+  class="accordion-item-body"
+  *ngIf="accordionBody.isActive"
+>
+  <span class="accordion-body">{{ accordionBody.body }}</span>
+</div>

@@ -1,0 +1,6 @@
+
+<div class="uc2ui-date">
+    <input type="text" placeholder="Select Date and Time" (click)="openDateTimePicker()" [value]="selectedDateTime" readonly />
+    <input type="datetime-local" #dateTimeInput (change)="onDateTimeChange($event)" />
+</div>
+

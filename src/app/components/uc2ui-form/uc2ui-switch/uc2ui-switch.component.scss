@@ -1,0 +1,49 @@
+:host{
+  .uc2ui-switch{
+    position: relative;
+    display: inline-block;
+    width: 3.2rem;
+    height: 1.8rem;
+
+    input{
+      width: 0;
+      height: 0;
+      padding: 0;
+      margin: 0;
+    }
+
+    input:checked + .slider {
+      background-color: #FBBF24;
+    }
+
+    input:checked + .slider:before {
+      transform: translateX(1.2rem);
+    }
+
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      transition: 0.4s;
+      border-radius: 34px;
+
+      &:before {
+        position: absolute;
+        content: "";
+        height: 1.6rem;
+        width: 1.6rem;
+        left: 0.2rem;
+        bottom: 2px;
+        background-color: white;
+        transition: 0.4s;
+        border-radius: 50%;
+      }
+    }
+  }
+
+
+}

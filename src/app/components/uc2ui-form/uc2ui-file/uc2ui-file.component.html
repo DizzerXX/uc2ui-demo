@@ -1,0 +1,43 @@
+<div class="upload-container">
+    <div class="drop-zone" (drop)="onFileDrop($event)" (dragover)="onDragOver($event)">
+        <ng-container *ngIf="isMultiple; else oneFile">
+            <p>Drop your files or click to upload</p>
+        </ng-container>
+        <ng-template #oneFile>
+            <p>Drop (1) file or click to upload</p>
+        </ng-template>
+        <ng-container *ngIf="this.maxFileSize">
+            <p>File size limit is {{maxFileSize}} MB</p>
+        </ng-container>
+        <i>Supported file type: <ng-container *ngFor="let fileType of inputFileType; let i = index">{{ fileType
+                }}<ng-container *ngIf="i < inputFileType!.length - 1">, </ng-container></ng-container> </i>
+        <button type="button" (click)="fileInput.click()">Browse</button>
+        <input type="file" #fileInput (change)="onFileSelect($event)" multiple hidden />
+    </div>
+    <div class="file-list">
+        <div *ngFor="let file of files" class="file-item" [ngClass]="{'error': file.error}">
+            <div class="file-preview" *ngIf="file.preview" (click)="onPreviewClick(file)">
+                <img [src]="file.preview" alt="{{ file.name }}" *ngIf="file.type !== 'PDF'"/>
+                <div class="prevImg" *ngIf="file.type === 'PDF'">📄</div>
+                <!-- <ng-template #default>
+                    <div class="prevImg asd"></div>
+                </ng-template> -->
+            </div>
+            <div class="file-info">
+                <span class="file-type">{{ file.type }}</span>
+                <span class="file-name">{{ file.name }}</span>
+                <span class="file-size">{{ file.size }}</span>
+            </div>
+            <div class="file-actions">
+                <button type="button" (click)="deleteFile(file)"><i class="uc2icons-trash"></i></button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Toast Component -->
+<uc2ui-toast></uc2ui-toast>
+
+<!-- Image Zoom Modal -->
+<uc2ui-previewer *ngIf="previewVisible" [file]="zoomedImage" (previewClose)="handlePreviewClose($event)"></uc2ui-previewer>
+

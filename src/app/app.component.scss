@@ -1,0 +1,31 @@
+:host{
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+
+  .demo-layout{
+    display: flex;
+    flex-grow: 1;
+    width: 100%;
+    flex-direction: column;
+
+    .header{
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      background-color: aqua;
+    }
+
+    .container{
+      display: grid;
+      grid-template-columns: 240px  1fr;
+      flex-grow: 1;
+
+      .nav-container{
+        display: flex;
+      }
+    }
+  }
+
+}

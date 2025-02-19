@@ -1,0 +1,13 @@
+<div class="uc2ui-checkbox" [ngStyle]="{'flex-direction': inline ? 'row' : 'column'}">
+  <ng-container *ngFor="let option of options">
+    <div class="checkbox-item">
+      <div
+        class="checkbox-box"
+        [ngClass]="{'checked': isChecked(option.value)}"
+        (click)="toggleCheck(option.value)">
+        <i class="checkbox-icon" *ngIf="isChecked(option.value)" class="uc2icons-check"></i>
+      </div>
+      <span class="checkbox-label">{{ option.label }}</span>
+    </div>
+  </ng-container>
+</div>

@@ -1,0 +1,171 @@
+<div class="uc2ui-form" *ngIf="formData" [id]="formData.name">
+    <div class="form-container">
+      <div class="form-column" *ngFor="let column of formData.formData">
+        <div class="form-item" [ngClass]="{'inline': formData.inline}" *ngFor="let data of column.field">
+
+          <label [for]="data.name">{{ data.label }}</label>
+
+          <!-- Dynamic Input Container -->
+          <ng-container [ngSwitch]="data.type">
+
+            <!-- Standard Input Types -->
+            <div class="input-item" *ngSwitchDefault>
+              <input
+                class="uc2ui-input"
+                [type]="data.type"
+                [name]="data.name"
+                [(ngModel)]="formModel[data.name]"
+                [minlength]="data.minLength || ''"
+                [maxlength]="data.maxLength || ''"
+                [pattern]="data.pattern || ''"
+                #inputModel="ngModel"
+                [ngClass]="{'error': inputModel?.errors?.['required'] && inputModel.touched}"
+                (input)="onInputChange(data.name, $event, data.required)">
+
+              <!-- Error Message -->
+              <div class="error-message" *ngIf="formErrors[data.name]">
+                {{ data.label }} is required
+              </div>
+            </div>
+
+            <!-- Date Picker -->
+            <div class="input-item" *ngSwitchCase="'date'">
+              <input
+                class="uc2ui-input"
+                type="datetime-local"
+                [name]="data.name"
+                [(ngModel)]="formModel[data.name]"
+                (input)="onInputChange(data.name, $event, data.required)">
+            </div>
+
+            <!-- Textarea -->
+
+            <div class="input-item" *ngSwitchCase="'textarea'">
+              <textarea
+                *ngSwitchCase="'textarea'"
+                [name]="data.name"
+                [(ngModel)]="formModel[data.name]"
+                (input)="autoResize(data.name, $event)">
+              </textarea>
+            </div>
+
+            <!-- Checkbox -->
+            <div *ngSwitchCase="'checkbox'">
+              <uc2ui-checkbox
+                [options]="data.options"
+                [selectedCheck]="formModel[data.name]"
+                [multiple]="data.multiple"
+                (valueChange)="switchChange($event, data.name, data.required)"
+                [inline]="data.inline">
+              </uc2ui-checkbox>
+
+              <!-- Error Message -->
+              <div class="error-message" *ngIf="formErrors[data.name]">
+                {{ data.label }} is required
+              </div>
+            </div>
+
+            <!-- Switch -->
+            <div *ngSwitchCase="'switch'">
+              <uc2ui-switch
+                [value]="formModel[data.name]"
+                (valueChange)="switchChange($event, data.name, data.required)">
+              </uc2ui-switch>
+
+              <!-- Error Message -->
+              <div class="error-message" *ngIf="formErrors[data.name]">
+                {{ data.label }} is required
+              </div>
+            </div>
+
+            <!-- Slider -->
+            <div *ngSwitchCase="'slider'">
+              <uc2ui-slider
+                [value]="formModel[data.name]"
+                [min]="data.min" [max]="data.max"
+                (valueChange)="sliderChange($event, data.name, data.required)">
+              </uc2ui-slider>
+
+              <!-- Error Message -->
+              <div class="error-message" *ngIf="formErrors[data.name]">
+                {{ data.label }} is required
+              </div>
+            </div>
+
+            <!-- File Upload -->
+            <div *ngSwitchCase="'file'">
+              <uc2ui-file
+                [value]="formModel[data.name]" (fileValue)="fileUpload($event, data.name, data.required)" [inputFileType]="data.fileType"
+                [isMultiple]="data.multiple" [maxFileSize]="1">
+                <!-- file size in MB -->
+              </uc2ui-file>
+
+              <!-- Error Message -->
+              <div class="error-message" *ngIf="formErrors[data.name]">
+                {{ data.label }} is required
+              </div>
+            </div>
+
+            <!-- Dropdown -->
+            <div *ngSwitchCase="'select'">
+              <uc2ui-dropdown
+                [options]="data.options"
+                [selectedDropdown]="formModel[data.name]"
+                [multiple]="data.multiple"
+                (valueChange)="selectChange($event, data.name, data.required)"
+                placeholder="Please select an option">
+              </uc2ui-dropdown>
+
+              <!-- Error Message -->
+              <div class="error-message" *ngIf="formErrors[data.name]">
+                {{ data.label }} is required
+              </div>
+            </div>
+
+            <!-- Color Picker -->
+            <div *ngSwitchCase="'color'">
+              <uc2ui-color
+                [options]="data.options"
+                [selectedColor]="formModel[data.name]"
+                (valueChange)="colorChange($event, data.name, data.required)"
+                placeholder="Please select a color">
+              </uc2ui-color>
+
+              <!-- Error Message -->
+              <div class="error-message" *ngIf="formErrors[data.name]">
+                {{ data.label }} is required
+              </div>
+            </div>
+
+            <!-- Radio -->
+            <div *ngSwitchCase="'radio'">
+              <uc2ui-radio
+                [options]="data.options"
+                [selectedRadio]="formModel[data.name]"
+                (valueChange)="switchChange($event, data.name, data.required)"
+                [inline]="data.inline">
+              </uc2ui-radio>
+
+              <!-- Error Message -->
+              <div class="error-message" *ngIf="formErrors[data.name]">
+                {{ data.label }} is required
+              </div>
+            </div>
+
+          </ng-container>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Form Buttons -->
+    <div class="form-buttons">
+      <div *ngFor="let button of formData.buttons"
+           class="uc2-btn-{{ button.style }}"
+           [ngClass]="{'disabled': button.disabled }"
+           (click)="buttonTrigger(button)">
+        <span>{{ button.label }}</span>
+        <i *ngIf="button.icon" class="uc2icons-{{ button.icon }}"></i>
+      </div>
+    </div>
+  </div>

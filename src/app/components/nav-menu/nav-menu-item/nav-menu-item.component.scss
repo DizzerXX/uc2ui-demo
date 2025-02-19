@@ -1,0 +1,76 @@
+:host ::ng-deep{
+  background-color: #353535;
+  color: #FBBF24;
+  font-size: 0.9375rem !important;
+  line-height: 1.8rem;
+  border-radius: 4px;
+  font-weight: 500;
+
+  .nav-item{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 4px;
+    padding: 8px;
+    max-width: 100%;
+    cursor: pointer;
+    border-radius: 4px;
+    position: relative;
+
+    &:hover::after {
+      content: attr(data-hover-label);
+      position: absolute;
+      top: 50%;
+      left: calc(100% + 10px); // Adjust for spacing
+      transform: translateY(-50%);
+      background-color: #333; // Tooltip background
+      color: #fff; // Tooltip text color
+      padding: 4px 8px;
+      font-size: 12px;
+      border-radius: 4px;
+      white-space: nowrap;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      z-index: 10;
+    }
+
+    .nav-arrow{
+      position: absolute;
+      top: 50%;
+      transform: translate(0, -50%);
+    }
+
+    .nav-icon{
+      max-width: 100%;
+      width: 16px;
+    }
+
+    &.iconRight{
+      .nav-icon{
+        order: 2;
+      }
+    }
+
+    &:hover{
+      background-color: #8A8A8A;
+      border-radius: 4px;
+    }
+
+    .nav-label {
+      width: 100%;
+      overflow: hidden; /* Hide overflowing content */
+      white-space: nowrap; /* Prevent text from wrapping */
+      text-overflow: ellipsis; /* Show ellipsis */
+    }
+
+    &.active {
+      background-color: #f0f0f0; /* Change this to the color or style you want */
+      color: #007bff; /* Active text color */
+
+      .nav-label {
+        font-weight: bold; /* Optional: Add bold to the label */
+      }
+    }
+
+  }
+}

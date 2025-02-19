@@ -1,0 +1,30 @@
+<div class="uc2ui-color" (click)="toggleSelect()" [ngClass]="{'active': colorOpen}">
+  <span class="color-value" [ngStyle]="{'background-color': selectedColor, 'color': selectedColor}">
+    {{ selectedColor ? '' : placeholder }}
+
+  </span>
+  <div class="color-icon" [ngClass]="{'active': colorOpen}">
+    <!-- <svg *ngIf="!colorOpen" width="8" height="4" viewBox="0 0 8 4" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M1 0.5L4 3.5L7 0.5" stroke="#FBBF24" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+    <svg *ngIf="colorOpen" width="8" height="5" viewBox="0 0 8 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M7 3.5979L4 0.5979L1 3.5979" stroke="#FBBF24" stroke-linecap="round" stroke-linejoin="round" />
+    </svg> -->
+    <svg *ngIf="!colorOpen" width="22" height="12" viewBox="0 0 22 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M21 11L11 1L1 11" stroke="#FBBF24" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+
+    <svg *ngIf="colorOpen" width="22" height="12" viewBox="0 0 22 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M1 1L11 11L21 1" stroke="#FBBF24" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </div>
+  <div class="color-list" *ngIf="colorOpen">
+    <span
+      class="color-item"
+      *ngFor="let option of options"
+      (click)="selectItem(option)"
+      [ngClass]="{'selected': isSelected(option)}"
+      [ngStyle]="{'background-color': option.value}">
+    </span>
+  </div>
+</div>

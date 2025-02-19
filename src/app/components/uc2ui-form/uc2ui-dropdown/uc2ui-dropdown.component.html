@@ -1,0 +1,34 @@
+<div class="uc2ui-dropdown"
+     (click)="toggleSelect()"
+     [ngClass]="{'active': dropdownOpen}">
+  <span class="dropdown-value">
+    <!-- Display the labels of the selected options -->
+    {{ displaySelected() || placeholder }}
+  </span>
+  <div class="dropdown-icon" [ngClass]="{'active': dropdownOpen}">
+    <!-- <svg *ngIf="!dropdownOpen" width="8" height="4" viewBox="0 0 8 4" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M1 0.5L4 3.5L7 0.5" stroke="#FBBF24" stroke-linecap="round" stroke-linejoin="round" />
+    </svg> -->
+    <svg *ngIf="!dropdownOpen" width="22" height="12" viewBox="0 0 22 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M21 11L11 1L1 11" stroke="#FBBF24" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+
+    <!-- <svg *ngIf="dropdownOpen" width="8" height="5" viewBox="0 0 8 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M7 3.5979L4 0.5979L1 3.5979" stroke="#FBBF24" stroke-linecap="round" stroke-linejoin="round" />
+    </svg> -->
+    <svg *ngIf="dropdownOpen" width="22" height="12" viewBox="0 0 22 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M1 1L11 11L21 1" stroke="#FBBF24" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+
+  </div>
+
+  <div class="dropdown-list" *ngIf="dropdownOpen">
+    <span
+      class="dropdown-item"
+      *ngFor="let option of options"
+      (click)="selectItem(option, $event)"
+      [ngClass]="{'selected': isSelected(option)}">
+      {{ option.label }}
+    </span>
+  </div>
+</div>

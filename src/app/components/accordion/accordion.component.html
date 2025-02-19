@@ -1,0 +1,7 @@
+<div class="uc2ui-accordion">
+  <uc2ui-accordion-item
+    *ngFor="let item of accordionParam.data; let i = index"
+    [accordionBody]="item"
+    (toggle)="toggleItem(i)"
+  ></uc2ui-accordion-item>
+</div>

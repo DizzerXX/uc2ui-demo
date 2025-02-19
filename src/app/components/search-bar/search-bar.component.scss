@@ -1,0 +1,82 @@
+:host ::ng-deep{
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  border-radius: 4px;
+  z-index: 999;
+  font-family: OpenSans, sans-serif;
+  font-size: 0.9375rem !important;
+  font-weight: 400;
+  line-height: 1.8rem;
+
+  .search-bar-container{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    border-radius: 4px;
+
+    input{
+      min-height: 32px;
+      font-size: 0.9375rem !important;
+      font-weight: 400;
+      line-height: 1.8rem;
+      z-index: 1;
+      border: 1px solid transparent;
+      border-radius: 4px;
+      padding: 0 28px 0 8px;
+      font-family: OpenSans, sans-serif;
+
+
+      &.active{
+        border-radius: 4px 4px 0 0;
+      }
+    }
+
+    .search-icon {
+      position: absolute;
+      right: 8px;
+      top: 50%;
+      transform: translate(0, -50%);
+      pointer-events: none; // Ensure the icon doesn't interfere with input focus.
+      z-index: 1;
+    }
+
+    .search-results{
+      position: absolute;
+      top: 100%;
+      width: 100%;
+      max-height: 180px;
+      background-color: #FFFFFF;
+      border-radius: 0 0 4px 4px;
+
+      .results-container{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        max-height: 180px;
+        box-shadow: inset 0 4px 6px -6px #222;
+
+        .container-list{
+          max-height: 100%;
+          overflow-y: auto;
+
+          .search-item{
+            display: flex;
+            max-height: 100%;
+            flex-direction: row;
+            align-items: center;
+            min-height: 32px;
+            padding: 0 8px;
+            cursor: pointer;
+
+            &:hover{
+              background-color: #212121;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,43 @@
+:host {
+  .uc2ui-checkbox {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 1.4rem;
+    flex-wrap: wrap;
+
+    .checkbox-item {
+      display: flex;
+      flex-direction: row;
+      gap: 8px;
+      align-items: center;
+      justify-content: flex-start;
+
+      .checkbox-box {
+        position: relative;
+        min-width: 1.3rem;
+        min-height: 1.3rem;
+        aspect-ratio: 1 / 1;
+        background-color: #8A8A8A;
+        border: 1px solid #E9E9E9;
+        border-radius: 4px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &.checked {
+          background-color: #E9E9E9;
+          border: 1px solid #FBBF24;
+        }
+
+        .checkbox-icon {
+          font-family: 'uc2ui'; /* Your custom icon font family */
+          color: #FBBF24;
+          font-size: 16px;
+          display: block;
+        }
+      }
+    }
+  }
+}
